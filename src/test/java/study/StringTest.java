@@ -3,6 +3,7 @@ package study;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StringTest {
@@ -13,37 +14,39 @@ public class StringTest {
     }
 
     @Test
-    @DisplayName("split 테스트 1")
-    public void split() throws Exception {
-        //given
-        String testcase = "1,2";
+    @DisplayName("split 잘 되나?")
+    public void request1() throws Exception {
+        // given
 
-        //when
-        String[] split = testcase.split(",");
+        String actual = "1,2";
+        assertThat(actual.split(",")).contains("1", "2");
 
-        //then
-        assertThat(split).contains("1", "2");
     }
 
     @Test
-    @DisplayName("split 테스트 2")
-    public void split2() throws Exception {
-        //given
-        String testcase = "1";
-        //when
-        String[] split = testcase.split(",");
-        //then
-        assertThat(split).containsExactly("1");
-    }
+    @DisplayName("charAt 특정위치 문자 가져오기")
+    public void request2() throws Exception {
+        // given
 
-    @Test
-    @DisplayName("substring 테스트")
-    public void substring() throws Exception {
-        //given
-        String testcase = "(1,2)";
-        //when
-        String substring = testcase.substring(1, testcase.length()-1);
-        //then
-        assertThat(substring).isEqualTo("1,2");
+        String actual = "abc";
+
+        // when
+
+        char actualChar1 = actual.charAt(0);
+        char actualChar2 = actual.charAt(1);
+        char actualChar3 = actual.charAt(2);
+
+        // then
+
+        assertThat(actualChar1).isEqualTo('a');
+        assertThat(actualChar2).isEqualTo('b');
+        assertThat(actualChar3).isEqualTo('c');
+
+        assertThatThrownBy(() -> actual.charAt(3))
+                .isInstanceOf(StringIndexOutOfBoundsException.class)
+                .hasMessageContaining("String index out of range: 3");
+
+        assertThatExceptionOfType(IndexOutOfBoundsException.class)
+                .isThrownBy(() -> actual.charAt(4));
     }
 }

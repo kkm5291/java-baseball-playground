@@ -24,3 +24,20 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+---
+
+# Num - B - Request
+
+## 기능 요구 사항
+
+---
+```
+1. 스트라이크, 볼 판단 (힌트)
+
+2. 컴퓨터 숫자 부여
+
+3. 플레이어 입력 / 컴퓨터 숫자 출력
+
+4. 게임 종료 후 restart or finish
+```
