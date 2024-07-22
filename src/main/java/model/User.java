@@ -7,4 +7,8 @@ public class User {
     public void setNumber(String userNumber) {
         this.userNumber = userNumber;
     }
+
+    public String getNumber() {
+        return userNumber;
+    }
 }
