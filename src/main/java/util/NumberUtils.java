@@ -1,29 +1,35 @@
 package util;
 
 import model.Computer;
+import model.Strike;
 import model.User;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 public class NumberUtils {
 
-    public int checkStrikeCount(Computer computer, User user) {
+    public void checkScore(Computer computer, User user) {
+
+        List<String> computerNumberList = new ArrayList<>(Arrays.asList(computer.getNumber().split("")));
+        List<String> userNumberList = new ArrayList<>(Arrays.asList(user.getNumber().split("")));
+
+        List<Integer> strikeIndex = new ArrayList<>();
         int strikeCount = 0;
+        int ballCount = 0;
 
-        char[] computerNumberArray = computer.getNumber().toCharArray();
-        char[] userNumberArray = user.getNumber().toCharArray();
-
-        for (int i = 0; i < computerNumberArray.length; i++) {
-            if (computerNumberArray[i] == userNumberArray[i]) strikeCount++;
+        for (int i = 0; i < computerNumberList.size(); i++) {
+            if (computerNumberList.get(i).equals(userNumberList.get(i))) {
+                strikeCount++;
+                strikeIndex.add(i);
+            }
         }
 
-        return strikeCount;
-    }
-
-    // todo
-    //  어떻게 strike 카운터와 분리해서 ball count를 늘릴것인가.................................
-    private int checkBallCount(Computer computer, User user) {
-        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < userNumberList.size(); i++) {
+            if (!strikeIndex.contains(i) && !computerNumberList.contains(userNumberList.get(i))) {
+                ballCount++;
+            }
+        }
     }
 }
