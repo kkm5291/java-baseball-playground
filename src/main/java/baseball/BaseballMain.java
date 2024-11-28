@@ -1,6 +1,6 @@
-import view.InputView;
+package baseball;
 
-public class Main {
+public class BaseballMain {
     public static void main(String[] args) {
 
     }

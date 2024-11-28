@@ -27,7 +27,7 @@ ex) git checkout -b apply-feedback
 
 ---
 
-# Num - B - Request
+# Num - BaseBall - Request
 
 ## 기능 요구 사항
 

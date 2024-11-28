@@ -1,4 +1,4 @@
-package model;
+package baseball.model;
 
 public class User {
 

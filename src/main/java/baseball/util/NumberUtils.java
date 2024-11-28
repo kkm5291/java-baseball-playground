@@ -1,8 +1,7 @@
-package util;
+package baseball.util;
 
-import model.Computer;
-import model.Strike;
-import model.User;
+import baseball.model.Computer;
+import baseball.model.User;
 
 import java.util.Arrays;
 import java.util.List;

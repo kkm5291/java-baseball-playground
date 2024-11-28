@@ -1,7 +1,7 @@
-package controller;
+package baseball.controller;
 
-import model.User;
-import view.InputView;
+import baseball.model.User;
+import baseball.view.InputView;
 
 public class GameController {
 
