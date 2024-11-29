@@ -1,21 +1,31 @@
 package baseball.model;
 
-import java.util.Random;
+import java.util.*;
 
 public class Computer {
 
-    private String computerNumber;
+    private final List<Integer> computerNumbers;
 
-    public Computer() {
-        generateComputerNumber();
+    private Computer(Set<Integer> computerNumbers) {
+        this.computerNumbers = new ArrayList<>(computerNumbers);
     }
 
-    private void generateComputerNumber() {
+    public static Computer createComputer() {
+        return new Computer(generateComputerNumber());
+    }
+
+    private static Set<Integer> generateComputerNumber() {
         Random rand = new Random();
-        this.computerNumber = String.valueOf(rand.nextInt(1000));
+
+        Set<Integer> numbers = new HashSet<>();
+
+        while (numbers.size() < 3) {
+            numbers.add(rand.nextInt(10) + 1);
+        }
+        return numbers;
     }
 
-    public String getNumber() {
-        return this.computerNumber;
+    public List<Integer> getNumber() {
+        return this.computerNumbers;
     }
 }

@@ -1,14 +1,17 @@
 package baseball.model;
 
+import java.util.Scanner;
+
 public class User {
 
+    private final Scanner scanner;
     private String userNumber;
-
-    public void setNumber(String userNumber) {
-        this.userNumber = userNumber;
-    }
 
     public String getNumber() {
         return userNumber;
+    }
+
+    public void input() {
+
     }
 }
