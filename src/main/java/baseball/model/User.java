@@ -1,17 +1,26 @@
 package baseball.model;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class User {
 
-    private final Scanner scanner;
-    private String userNumber;
+    private List<Integer> userNumbers = new ArrayList<>();
 
-    public String getNumber() {
-        return userNumber;
+    public List<Integer> getNumbers() {
+        return userNumbers;
     }
 
-    public void input() {
+    public void setUserNumbers(String userNumber) {
+        this.userNumbers = parseInput(userNumber);
+    }
 
+    private List<Integer> parseInput(String input) {
+
+        return input.chars()
+                .map(Character::getNumericValue)
+                .boxed()
+                .collect(Collectors.toList());
     }
 }
