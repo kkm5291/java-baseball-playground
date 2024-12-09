@@ -31,6 +31,7 @@ public class GameController {
             resultView.printCallCount(referee.getBallCount(), referee.getStrikeCount());
 
             if (referee.getStrikeCount() == 3) {
+                resultView.printEnd();
                 String reGameFlag = inputView.reGameInput();
 
                 if (reGameFlag.equals("2")) {
