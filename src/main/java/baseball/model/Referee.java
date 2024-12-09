@@ -5,10 +5,12 @@ import java.util.Objects;
 
 public class Referee {
 
-    private int strikeCount = 0;
-    private int ballCount = 0;
+    private int strikeCount;
+    private int ballCount;
 
     public void call(List<Integer> computerNums, List<Integer> userNums) {
+        strikeCount = 0;
+        ballCount = 0;
 
         for(int i=0; i<computerNums.size(); i++) {
             count(computerNums, userNums, i);
