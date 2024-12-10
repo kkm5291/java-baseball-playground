@@ -13,6 +13,10 @@ public class Result {
             result.append(strikeCount).append("스트라이크");
         }
 
+        if (strikeCount == 0 && ballCount == 0) {
+            result.append("낫싱");
+        }
+
         System.out.println(result);
     }
 

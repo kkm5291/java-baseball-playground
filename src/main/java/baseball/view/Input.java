@@ -16,7 +16,8 @@ public class Input {
         return sc.nextLine();
     }
 
-    public String reGameInput() {
-        return sc.nextLine();
+    public boolean reGameInput() {
+        String input = sc.nextLine();
+        return input.equals("1");
     }
 }

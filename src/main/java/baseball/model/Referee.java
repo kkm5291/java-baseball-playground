@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Referee {
-    // todo 아무것도 안맞았을 경우 아무것도 안뜸
 
     private int strikeCount;
     private int ballCount;
